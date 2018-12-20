@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script src="jquery-1.12.4.js"></script>
+
+
+<body>
+
+<div>
+    <p>11111</p>
+    <p>11111</p>
+    <p>11111</p>
+    <p>11111</p>
+    <p>11111</p>
+</div>
+
+
+<script>
+
+    $(function () {
+
+        //1、使用 on 添加 click mouseenter 这两个事件
+
+        $("p").on("click mouseenter", function () {
+
+            alert("---->")
+        });
+
+        //2、使用 off 移除了对应的事件
+
+        // $("p").off("mouseenter");
+
+        //3、使用off 空 代表移除所有事件
+
+        $("p").off();
+
+    })
+
+
+</script>
+
+
+</body>
+</html>

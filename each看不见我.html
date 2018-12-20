@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+
+    #ulist li {
+        list-style: none;
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        line-height: 200px;
+        align-items: center;
+        text-align: center;
+        margin: 0 20px 20px 0;
+    }
+
+
+</style>
+
+<script src="jquery-1.12.4.js"></script>
+
+
+<body>
+
+<ul id="ulist">
+    <li>你看不见我</li>
+    <li>你看不见我</li>
+    <li>你看不见我</li>
+    <li>你看不见我</li>
+    <li>你看不见我</li>
+    <li>你看不见我</li>
+    <li>你看不见我</li>
+    <li>你看不见我</li>
+    <li>你看不见我</li>
+</ul>
+
+
+<script>
+
+
+    $(function () {
+
+        $("#ulist>li").each(function (index, element) {
+
+            $(element).css("opacity",(index+1)/10);
+        })
+
+    })
+
+
+</script>
+
+</body>
+</html>

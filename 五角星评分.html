@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.12.4.js"></script>
+
+<style>
+    li {
+        display: inline-block;
+        list-style: none;
+        font-size: 24px;
+        line-height: 60px;
+        margin: 5px;
+    }
+
+    ul {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+</style>
+
+
+<body>
+
+<div>
+    <ul id="content">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+    </ul>
+</div>
+
+<script>
+    $(function () {
+
+        var wjx_x = "☆";
+        var wjx_s = "★";
+
+        //1、注册鼠标经停事件
+
+        $("#content>li").on("mouseenter", function () {
+
+            $(this).text(wjx_s).prevAll().text(wjx_s);
+            $(this).nextAll().text(wjx_x);
+
+        })
+
+        //2、注册鼠标离开效果
+        $("#content>li").on("mouseleave", function () {
+
+            $("#content>li").text(wjx_x);
+
+            //然后处理 如果被点击过后 的处理
+
+            $(".current").text(wjx_s).prevAll().text(wjx_s);
+
+        })
+
+        //3、给li添加点击事件
+
+        $("#content>li").on("click", function () {
+
+            $(this).addClass("current").siblings("li").removeClass("current");
+
+        })
+
+
+    })
+</script>
+
+</body>
+</html>

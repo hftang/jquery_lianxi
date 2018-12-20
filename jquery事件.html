@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.12.4.js"></script>
+<body>
+
+<input type="button" value="添加" id="btn">
+
+<div>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+</div>
+
+<script>
+    $(function () {
+
+        //使用bind添加一个事件
+
+        // $("#btn").bind("click", function () {
+        //     alert("aaa");
+        // });
+
+
+        //使用bind 给一个element添加多个事件
+        // $("#btn").bind({
+        //     "click": function () {
+        //
+        //         alert("点击事件");
+        //
+        //     },
+        //     "mouseenter": function () {
+        //         alert("鼠标事件");
+        //     }
+        // })
+
+
+        //点击添加按钮 添加p到div里 并且给新添加的 p注册上点击事件 delegate 委托事件
+
+        // $("#btn").click(function () {
+        //
+        //     $("<p>我是新p元素</p>").appendTo($("div"));
+        //
+        // });
+        //
+        // //找到div
+        // $("div").delegate("p","click",function () {
+        //
+        //     alert("新添加的p有点击事件")
+        // });
+
+        // on 的这种形式：2个参数 是简单事件 是给自己注册事件   3个参数 是委托 给选择器 添加事件
+
+        //给div里的p添加点击事件click
+
+        $("div").on("click", "p", function () {
+
+            alert("8888");
+        });
+
+        $("#btn").click(function () {
+            $("<p>新----》</p>").appendTo($("div"));
+        })
+
+
+    });
+
+</script>
+
+
+</body>
+</html>

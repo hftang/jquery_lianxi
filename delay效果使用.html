@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script src="jquery-1.12.4.js"></script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        width: 400px;
+        height: 70px;
+        background-color: pink;
+        text-align: center;
+        line-height: 70px;
+        margin: 120px auto;
+    }
+</style>
+
+
+<body>
+
+<div>这是一条消息</div>
+
+<script>
+
+
+    $(function () {
+        $("div").fadeIn(3000).delay(2000).fadeOut(3000);
+
+    })
+
+
+</script>
+
+</body>
+</html>

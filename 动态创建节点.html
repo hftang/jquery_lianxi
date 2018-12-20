@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+
+    select {
+        width: 200px;
+        height: 200px;
+        background-color: teal;
+        font-size: 20px;
+    }
+
+    .btn_box {
+        width: 30px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+
+</style>
+
+<script src="jquery-1.12.4.js"></script>
+<body>
+
+
+<h1>城市选择：</h1>
+<select id="src_city" name="src_city" multiple>
+    <option value="1">北京</option>
+    <option value="2">上海</option>
+    <option value="3">深圳</option>
+    <option value="4">广州</option>
+    <option value="5">西红柿</option>
+</select>
+<div class="btn_box">
+    <button id="btn01">&gt;&gt;</button>
+    <button id="btn02">&lt;&lt;</button>
+    <button id="btn03">&gt;</button>
+    <button id="btn04">&lt;</button>
+</div>
+
+<select id="tar_city" name="tar_city" multiple></select>
+
+
+<script>
+
+    //把左边的全部移动到右边
+    $("#btn01").click(function () {
+        $("#src_city>option").appendTo($("#tar_city"))
+    });
+    // 把右边的全部移动到左边
+
+    $("#btn02").click(function () {
+
+        $("#tar_city>option").appendTo($("#src_city"));
+    })
+
+    //把左边选中的移动到左边
+    $("#btn03").click(function () {
+        $("#src_city>option:selected").appendTo($("#tar_city"));
+    });
+
+    //把右边选中的移动到左边
+    $("#btn04").click(function () {
+        $("#tar_city>option:selected").appendTo($("#src_city"));
+    });
+
+</script>
+
+
+</body>
+</html>

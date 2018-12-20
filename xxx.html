@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.12.4.js">
+
+</script>
+<body>
+
+<a href="http://www.baidu.com">点击我</a>
+
+<script>
+
+    var count = 1000;
+    //1、给a添加点击事件
+    // $("a").on("click", count, function (e) {
+    //
+    //     //获取到了data的值
+    //     var data = e.data;
+    //     console.log(data);
+    //     return false;
+    //
+    // })
+
+    //2、阻止事件
+    $("a").on("click", function (e) {
+
+        // 1 preventDefault阻止游览器默认行为
+        // e.preventDefault();
+
+        // 2 阻止浏览器默认行为也能阻止冒泡行为
+
+        // return false;
+
+        // 3 stopPropagation()
+
+        e.stopPropagation();//阻止冒泡行为
+
+
+    })
+
+
+</script>
+
+</body>
+</html>

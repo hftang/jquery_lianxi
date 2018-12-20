@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="jquery-1.12.4.js"></script>
+</head>
+<body>
+
+<div>
+    <p>11111</p>
+    <p>22222</p>
+</div>
+
+<p id="pp">inner点击</p>
+
+<script>
+
+    $(function () {
+
+        //先给p添加点击事件
+        $("#pp").click(function () {
+            alert("AAAAA");
+
+        })
+
+        //克隆 添加元素 true 是深度复制 也复制了事件  false 不是深度复制 没有复制事件
+
+        $("#pp").clone(true).appendTo("div");
+
+
+    })
+</script>
+
+
+</body>
+</html>

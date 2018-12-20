@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.12.4.js"></script>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrap {
+        width: 460px;
+        margin: 100px auto 0;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #c0c0c0;
+    }
+
+    td, th {
+        border: 1px solid #d0d0d0;
+        color: #404060;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #09c;
+        font: bold 16px "微软雅黑";
+        color: #fff;
+
+    }
+
+    td {
+        font: 14px "微软雅黑";
+    }
+
+    td a.get {
+        text-decoration: none;
+    }
+
+    a.del:hover {
+        text-decoration: underline;
+    }
+
+    tbody tr {
+        background-color: #f0f0f0;
+    }
+
+    tbody tr:hover {
+        cursor: pointer;
+        background-color: #fafafa;
+
+    }
+
+    #btn, #btnAdd {
+        width: 110px;
+        height: 30px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+
+
+<body>
+
+<div class="wrap">
+    <input type="button" value="清除内容" id="btn">
+    <input type="button" value="添加" id="btnAdd">
+
+    <table>
+        <thead>
+        <tr>
+            <th>课程名称</th>
+            <th>所属学院</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+
+
+        <tbody id="j_tb">
+        <tr>
+            <td>javascript</td>
+            <td>移动开发学院</td>
+            <td><a href="javascript:;" class="get">DELETE</a></td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+</div>
+
+<script>
+
+    //1、清除所有数据
+
+    $("#btn").on("click", function () {
+
+        $("#j_tb").empty();
+
+    })
+
+    //2、删除操作 父容器才能给子添加委托事件
+
+    $("#j_tb").on("click", ".get", function () {
+        $(this).parent().parent().remove();
+
+    })
+
+    //3、添加
+
+    $("#btnAdd").on("click", function () {
+
+        $(" <tr>\n" +
+            "            <td>javascript</td>\n" +
+            "            <td>移动开发学院</td>\n" +
+            "            <td><a href=\"javascript:;\" class=\"get\">DELETE</a></td>\n" +
+            "        </tr>").appendTo("#j_tb")
+
+
+    })
+
+
+</script>
+
+
+</body>
+</html>
